@@ -125,6 +125,11 @@ namespace HeroesParserData
             }
         }
 
+        public void RestartApp()
+        {
+            UpdateManager.RestartApp();
+        }
+
         public static void CopyDatabaseToLatestRelease()
         {
             string dbFile = Settings.Default.DatabaseFile;

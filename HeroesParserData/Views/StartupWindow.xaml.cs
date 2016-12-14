@@ -88,7 +88,7 @@ namespace HeroesParserData.Views
         {
             try
             {
-            #if !DEBUG
+#if !DEBUG
                 AutoUpdater autoUpdater = new AutoUpdater();
 
                 await Message("Checking for updates...");
@@ -119,9 +119,8 @@ namespace HeroesParserData.Views
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
-                System.Diagnostics.Process.Start(Path.Combine(App.NewLatestDirectory, "HeroesParserData.exe"));
-                Application.Current.Shutdown();
-            #endif
+                autoUpdater.RestartApp();
+#endif
             }
             catch (AutoUpdaterException ex)
             {
